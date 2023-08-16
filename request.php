@@ -9,7 +9,6 @@ if (!empty($_POST)) {
   $address = mysqli_real_escape_string($conn, $_POST['address']);
   $postcode = mysqli_real_escape_string($conn, $_POST['postcode']);
   $state = mysqli_real_escape_string($conn, $_POST['state']);
-  $name = mysqli_real_escape_string($conn, $_POST['name']);
   $itemDonate = mysqli_real_escape_string($conn, $_POST['itemDonate']);
   $city = mysqli_real_escape_string($conn, $_POST['city']);
 
@@ -19,7 +18,7 @@ if (!empty($_POST)) {
   }
 
   // SQL
-  $save_db = "INSERT INTO foodhelpcentre
+  $save_db = "INSERT INTO fooddonation
   (date, time, contactNum, itemDonate, address, city, postcode, state)
   VALUES
   ('$date', '$time', '$contactNum', '$itemDonate', '$address', '$city', '$postcode', '$state')
@@ -41,12 +40,11 @@ if (!empty($_POST)) {
 
 <head>
   <!-- custom css file link  -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="request.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <!--Font Awesome link [for icon]-->
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
   <!--import the font "Lato" from the Google Fonts service-->
-
 </head>
 
 <body>
