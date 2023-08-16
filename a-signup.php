@@ -50,14 +50,12 @@ if(isset($_POST['submit'])) //Validate submit
         {
             $code=rand(1,9999);
             $userid="U".$code;
-            $sql="INSERT INTO account(accountid,email,password)VALUES('$userid','$email','$pass')";
+            $usertype="user";
+            $sql="INSERT INTO account(accountid,email,password,accounttype)VALUES('$userid','$email','$pass','$usertype')";
             $result=mysqli_query($conn,$sql);
             
-            $_SESSION['userid']=$userid;
-            $_SESSION['email']=$email;
-            $_SESSION['password']=$password;
             
-            header("Location:homepage.php");
+            header("Location:login.php");
             exit();
         }
 
