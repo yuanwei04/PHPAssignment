@@ -1,143 +1,140 @@
 body {
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #9BCB78;
-  }
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #9bcb78;
+}
 
-  /*menu css*/
-  .menu{ 
-	background-color:#254117;
-	padding:10px;
-	font-family:'Lato', sans-serif;
-	position:sticky;  /* make it stick to the top*/
-	top: 0;
-    z-index: 999; /*appears on top of other elements*/
-  }
+/*menu css*/
+.menu {
+  background-color: #254117;
+  padding: 10px;
+  font-family: "Lato", sans-serif;
+  position: sticky; /* make it stick to the top*/
+  top: 0;
+  z-index: 999; /*appears on top of other elements*/
+}
 
-  .menu img{
-	width:6%;
-	position: absolute;
-	top: 10px;
-	left: 20px;
-	z-index: 999; /*appears on top of other elements*/
-  }
+.menu img {
+  width: 6%;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 999; /*appears on top of other elements*/
+}
 
-  #logoTitle{
-	color: white;
-	font-size: 16px;
-	margin-left: 100px;
-	position: absolute;
-	z-index: 999; /*appears on top of other elements*/
-  }
+#logoTitle {
+  color: white;
+  font-size: 16px;
+  margin-left: 100px;
+  position: absolute;
+  z-index: 999; /*appears on top of other elements*/
+}
 
-  ul {
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display:flex;
-  justify-content:flex-end;
-  }
+  display: flex;
+  justify-content: flex-end;
+}
 
-  li{
-	margin-right:24px;
+li {
+  margin-right: 24px;
+}
 
-  }
+.dropDown {
+  position: absolute;
+  display: none;
+  width: 150px;
+  text-align: left;
+}
 
-  .dropDown{
-	position:absolute;
-	display:none;
-	width:150px;
-	text-align:left;
-	
-  }
+li:hover .dropDown {
+  display: block;
+  background-color: #3a4d2d;
+}
 
-  li:hover .dropDown{
-	display:block;
-	background-color:#3A4D2D;
-  }
+.menu a {
+  display: inline-block;
+  width: 100px;
+  height: 55px;
+  color: White;
+  text-align: center;
+  line-height: 55px;
+  text-decoration: none;
+}
 
-  .menu a{
-   display: inline-block;
-   width: 100px;
-   height: 55px;
-   color: White;
-   text-align: center;   
-   line-height: 55px;    
-   text-decoration: none;
-  }
+.menu a:hover {
+  color: #8db7cc;
+}
 
-  .menu a:hover{
-	color: #8DB7CC;
-  }
-
-  
 .container {
-    display: flex;
-    justify-content: center;
-    margin: 40px;
-    background: none;
-    backdrop-filter: blur(10px);
-    width:90%;
-  }
-  
-  .container form {
-    padding: 30px;
-    box-shadow: 0 5px 10px;
-    background: #c7d5bd;
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  background: none;
+  backdrop-filter: blur(10px);
+  width: 90%;
+}
 
-    border-radius:8px;
-  }
+.container form {
+  padding: 30px;
+  box-shadow: 0 5px 10px;
+  background: #c7d5bd;
 
-  .title {
-    text-align:center;
-  }
-  
-  .container form .row .col .inputBox {
-    margin: 15px 0;
-  }
-  
-  .container form .row .col .inputBox span {
-    margin-bottom: 10px;
-    display: block;
-  }
-  
-  .container form .row .col .inputBox input {
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 10px 15px;
-    font-size: 15px;
-    text-transform: none;
-    border-radius: 40px;
-    box-sizing:border-box;
-  }
-  
-  .container form .row .col .flex {
-    display: flex;
-    gap: 80px;
-  }
-  
-  .container form .row .col .flex .inputBox {
-    margin-top: 5px;
-  }
-  
-  .container form .submit-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 17px;
-    background: #9BCB78;
-    color: #3A4D2D;
-    margin-top: 5px;
-    cursor: pointer;
-    border:none;
-    border-radius: 40px;
-  }
-  
-  .container form .submit-btn:hover {
-    background: #8DB7CC;
-    color: white;
-  }
-  
-  .delivery {
-    margin-top: 5px;
-  }
+  border-radius: 8px;
+}
+
+.title {
+  text-align: center;
+}
+
+.container form .row .col .inputBox {
+  margin: 15px 0;
+}
+
+.container form .row .col .inputBox span {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+  border-radius: 40px;
+  box-sizing: border-box;
+}
+
+.container form .row .col .flex {
+  display: flex;
+  gap: 80px;
+}
+
+.container form .row .col .flex .inputBox {
+  margin-top: 5px;
+}
+
+.container form .submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  background: #9bcb78;
+  color: #3a4d2d;
+  margin-top: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 40px;
+}
+
+.container form .submit-btn:hover {
+  background: #8db7cc;
+  color: white;
+}
+
+.delivery {
+  margin-top: 5px;
+}
