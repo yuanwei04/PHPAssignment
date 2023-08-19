@@ -45,7 +45,7 @@ VALUES  ('FI001', 'bread', 'A staple food made from flour.'),
 
 /*Food Donation*/
 CREATE TABLE foodDonation (
-    foodDonationID INT(4) PRIMARY KEY AUTO_INCREMENT=1,
+    foodDonationID INT(4) PRIMARY KEY AUTO_INCREMENT,
     `date` DATE,
     `time` TIME,
     contactNum VARCHAR(20),

@@ -2,11 +2,6 @@
 
 include("a-DBconnect.php");
 
-if (empty($_GET)) {
-    die("<script>alert('Invalid Access.');
-    window.location.href = 'a-homepage.php';</script>");
-}
-
 if (!empty($_POST)) {
     $accountID = mysqli_real_escape_string($conn, $_POST['accountID']);
     $itemDonate = mysqli_real_escape_string($conn, $_POST["itemDonate"]);
