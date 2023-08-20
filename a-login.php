@@ -94,7 +94,7 @@ mysqli_close($conn);
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Food Help Centre</title>
-    <link href="a-login.css" rel="stylesheet">
+    <link href="css/a-login.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!--Font Awesome link [for icon]-->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>

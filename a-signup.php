@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) //Validate submit
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Food Bank Website</title>
-    <link href="a-signup.css" type="text/css" rel="stylesheet">
+    <link href="css/a-signup.css" type="text/css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     <!--import the font "Lato" from the Google Fonts service-->
 

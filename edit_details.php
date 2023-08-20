@@ -33,7 +33,7 @@ if (!empty($_POST)) {
 
 <head>
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="request.css" />
+    <link rel="stylesheet" href="css/request.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!--Font Awesome link [for icon]-->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
@@ -63,54 +63,68 @@ if (!empty($_POST)) {
         </ul>
     </div>
 
-    <table border="1">
-        <tr>
-            <td>Account ID</td>
-            <td>ItemDonate</td>
-            <td>FoodBankNo</td>
-            <td>Edit Data</td>
-        </tr>
+    <div class="table-div">
+        <table border="1">
+            <tr>
+                <td>FoodDonationID</td>
+                <td>Account ID</td>
+                <td>ItemDonate</td>
+                <td>FoodBankNo</td>
+                <td>Edit Data</td>
+            </tr>
 
-        <tr>
-            <form action='' method='POST'>
-                <td><input type='text' name='accountID' value='<?php echo $_GET['accountID']; ?>'></td>
-                <td><input type='text' name='itemDonate' value='<?php echo $_GET['itemDonate']; ?>'></td>
-                <td><input type='text' name='foodBankNo' value='<?php echo $_GET['foodBankNo']; ?>'></td>
-                <td><input type='submit' value='Submit'></td>
-            </form>
-        </tr>
-        <?php
+            <tr>
+                <form action='' method='POST'>
+                    <td><input type="text" name="fooddonationID" value='<?php echo $_GET['fooddonationID']; ?>'></td>
+                    <td><input type='text' name='accountID' value='<?php echo $_GET['accountID']; ?>'></td>
+                    <td><input type='text' name='itemDonate' value='<?php echo $_GET['itemDonate']; ?>'></td>
+                    <td><input type='text' name='foodBankNo' value='<?php echo $_GET['foodBankNo']; ?>'></td>
+                    <td><input type='submit' value='Submit'></td>
+                </form>
+            </tr>
+            <?php
 
-        include("a-DBconnect.php");
+            include("a-DBconnect.php");
 
-        $retrive_details = "SELECT a.accountID, a.itemDonate, a.foodBankNo
-        FROM fooddonation a, account b, foodbank c
-        WHERE a.accountID = b.accountID
-        AND a.foodBankNo = c.foodBankNo";
+            $retrive_details = "SELECT a.fooddonationID, a.accountID, a.itemDonate, a.foodBankNo
+            FROM fooddonation a, account b, foodbank c
+            WHERE a.accountID = b.accountID
+            AND a.foodBankNo = c.foodBankNo";
 
-        $execute_details = mysqli_query($conn, $retrive_details);
+            $execute_details = mysqli_query($conn, $retrive_details);
 
-        while ($record = mysqli_fetch_array($execute_details)) {
-            $data_details = array(
-                'accountID' => $record['accountID'],
-                'itemDonate' => $record['itemDonate'],
-                'foodBankNo' => $record['foodBankNo']
-            );
+            while ($record = mysqli_fetch_array($execute_details)) {
+                $data_details = array(
+                    'fooddonationID' => $record['fooddonationID'],
+                    'accountID' => $record['accountID'],
+                    'itemDonate' => $record['itemDonate'],
+                    'foodBankNo' => $record['foodBankNo']
+                );
 
-            echo "<tr>
-            <td>" . $record["accountID"] . "</td>
-            <td>" . $record["itemDonate"] . "</td>
-            <td>" . $record["foodBankNo"] . "</td>
-            <td>
-                <a href='edit_details.php?" . http_build_query($data_details) . "'>Edit</a>
-            </td>
-            </tr>";
-        }
+                echo "<tr>
+                <td>" . $record['fooddonationID'] . "</td>
+                <td>" . $record["accountID"] . "</td>
+                <td>" . $record["itemDonate"] . "</td>
+                <td>" . $record["foodBankNo"] . "</td>
+                <td>
+                <div>
+                    <div>
+                        <a class='edit_button' href='edit_details.php?" . http_build_query($data_details) . "'>Edit</a>
+                    </div>
+                    <div>
+                        <a class='delete_button' href='delete.php?table=fooddonation&column=fooddonationID&pk=" . $record['fooddonationID'] . "'onClick=\"return confirm('You Want To Delete This Data?')\"> Delete </a>
+                    </div>
+                </div>
+                </td>
+                </tr>";
+            }
 
-        mysqli_close($conn);
-        ?>
+            mysqli_close($conn);
+            ?>
 
-    </table>
+        </table>
+    </div>
+
 </body>
 
 </html>

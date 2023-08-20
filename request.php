@@ -40,7 +40,7 @@ if (!empty($_POST)) {
 
 <head>
   <!-- custom css file link  -->
-  <link rel="stylesheet" href="request.css" />
+  <link rel="stylesheet" href="css/request.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <!--Font Awesome link [for icon]-->
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
