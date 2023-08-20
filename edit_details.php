@@ -3,16 +3,18 @@
 include("a-DBconnect.php");
 
 if (!empty($_POST)) {
+    $fooddonationID = mysqli_real_escape_string($conn, $_POST['fooddonationID']);
     $accountID = mysqli_real_escape_string($conn, $_POST['accountID']);
     $itemDonate = mysqli_real_escape_string($conn, $_POST["itemDonate"]);
     $foodBankNo = mysqli_real_escape_string($conn, $_POST["foodBankNo"]);
 
-    if (empty($accountID) or empty($itemDonate) or empty($foodBankNo)) {
+    if (empty($fooddonationID) or empty($accountID) or empty($itemDonate) or empty($foodBankNo)) {
         die("<script>alert('Please Enter Required Data');
         window.history.back();</script>");
     }
 
     $update_data = "UPDATE fooddonation SET
+    fooddonationID = '$fooddonationID',
     accountID = '$accountID',
     itemDonate = '$itemDonate',
     foodBankNo = '$foodBankNo'
