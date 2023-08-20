@@ -53,8 +53,6 @@ if (isset($_POST['submit'])) //Validate submit
     }
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
